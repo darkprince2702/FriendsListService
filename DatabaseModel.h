@@ -28,19 +28,19 @@ using namespace profileservice;
 
 namespace profileservice {
 
-class DatabaseModel {
-public:
-    static DatabaseModel* getInstance();
-    GetResult getData(std::string key);
-    bool setData(std::string key, std::string value);
-    bool removeData(std::string key);
-private:
-    boost::shared_ptr<TSocket> socket;
-    boost::shared_ptr<TTransport> transport;
-    boost::shared_ptr<TProtocol> protocol;
-    databaseservice::DatabaseServiceClient client;
-    DatabaseModel();
-};
+    class DatabaseModel {
+    public:
+        static DatabaseModel* getInstance();
+        std::vector<std::string> getFriendsList(std::string ID) = 0;
+        bool setFriend(std::string ID1, std::string ID2) = 0;
+        bool removeFriend(std::string ID1, std::string ID2) = 0;
+    private:
+        boost::shared_ptr<TSocket> socket;
+        boost::shared_ptr<TTransport> transport;
+        boost::shared_ptr<TProtocol> protocol;
+        databaseservice::DatabaseServiceClient client;
+        DatabaseModel();
+    };
 
 }
 

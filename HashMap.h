@@ -17,9 +17,9 @@ namespace profileservice {
         HashMap();
     public:
         static HashMap *getInstance();
-        GetResult getData(std::string key);
-        bool setData(std::string key, std::string value);
-        bool removeData(std::string key);
+        std::vector<std::string> getFriendsList(std::string ID) = 0;
+        bool setFriend(std::string ID1, std::string ID2) = 0;
+        bool removeFriend(std::string ID1, std::string ID2) = 0;
     };
 }
 

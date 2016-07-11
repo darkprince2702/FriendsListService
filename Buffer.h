@@ -11,9 +11,9 @@ namespace profileservice {
 
     class Buffer {
     public:
-        virtual GetResult getData(std::string key) = 0;
-        virtual bool setData(std::string key, std::string value) = 0;
-        virtual bool removeData(std::string key) = 0;
+        virtual std::vector<std::string> getFriendsList(std::string ID) = 0;
+        virtual bool setFriend(std::string ID1, std::string ID2) = 0;
+        virtual bool removeFriend(std::string ID1, std::string ID2) = 0;
         static Buffer *getBuffer(std::string bufferType);
     };
 }
